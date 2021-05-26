@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <h1 class="bg-gradient-primary text-white text-center">Weather Dashboard</h1>
+
+    <div class="row m-1">
+        <div class="col-3 border-bottom border-dark">
+            <h2 class="p-2"> Search for a City:</h2>
+            <form class="pb-2">
+                <input type="text" class="w-100">
+            </form>
+            <button class="mb-2 btn btn-primary btn-block" id="search">Search</button>
+        </div>
+
+        <!-- This is where the selected city's in depth information will be displayed  -->
+        <div class="col-8 border border-dark ml-3">
+            <h3 id="City">City Name</h3>
+            <p id="Temp">Temperature</p>
+            <p id="Wind">Wind</p>
+            <p id="Humid">Humidity</p>
+            <p id="UV">UV Index</p>
+        </div>
+    </div>
+
+    <div class="row m-1">
+        <!-- This is where previously searched for cities will be contained  -->
+        <div class="col-3 text-center bg-secondary mt-2" id="cities">
+            <span>
+                Placeholder
+            </span>
+          </div>
+  
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/weather.js"></script>
+</body>
+</html>
