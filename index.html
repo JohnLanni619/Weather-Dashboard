@@ -14,19 +14,20 @@
     <div class="row m-1">
         <div class="col-3 border-bottom border-dark">
             <h2 class="p-2"> Search for a City:</h2>
-            <form class="pb-2">
-                <input type="text" class="w-100">
+            <form id="city-form" class="pb-2">
+                <input name="cityname" id="cityname" type="text" class="w-100">
+                <button type="submit" class="mb-2 mt-2 btn btn-primary btn-block">Search</button>
             </form>
-            <button class="mb-2 btn btn-primary btn-block" id="search">Search</button>
+            
         </div>
 
         <!-- This is where the selected city's in depth information will be displayed  -->
         <div class="col-8 border border-dark ml-3">
-            <h3 id="City">City Name</h3>
-            <p id="Temp">Temperature</p>
-            <p id="Wind">Wind</p>
-            <p id="Humid">Humidity</p>
-            <p id="UV">UV Index</p>
+            <h3 id="city"></h3>
+            <span>Temp:</span> <span id="temp">test</span> <br>
+            <span>Wind:</span> <span id="wind">test</span> <br>
+            <span>Humidity:</span> <span id="humidity">test</span> <br>
+            <span>UV Index:</span> <span id="uv">test</span>
         </div>
     </div>
 
@@ -45,23 +46,43 @@
 
             <div class="row">
                 <div class="col-2">
-                    Testing
+                    <p>Date</p>
+                    <p>Image</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
                 </div>
 
                 <div class="col-2">
-                    Testing
+                    <p>Date</p>
+                    <p>Image</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
                 </div>
 
                 <div class="col-2">
-                    Testing
+                    <p>Date</p>
+                    <p>Image</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
                 </div>
 
                 <div class="col-2">
-                    Testing
+                    <p>Date</p>
+                    <p>Image</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
                 </div>
 
                 <div class="col-2">
-                    Testing
+                    <p>Date</p>
+                    <p>Image</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
                 </div>
             </div>
         </div>
