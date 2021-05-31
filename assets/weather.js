@@ -2,7 +2,6 @@ var cityFormEl = document.querySelector("#city-form");
 var nameInputEl = document.querySelector("#cityname");
 var date = moment().format('MMMM Do, YYYY');
 var time = moment().format('hh:mm:ss');
-// var createButton = $("#cities"); 
 
 var getWeather = function(city) {
     // format the url
@@ -46,21 +45,21 @@ var getForecast = function(city) {
     }).then(function (response) {
         console.log(response);
 
-        //Creating cards
+       
         let forecastDiv = $("#forecast");
         let day = response.list;
 
         forecastDiv.empty();
 
-        // For each for 5 days
+       
         for (let i = 4; i < day.length; i += 8) {
 
-            // Making a div with 2 classes to append to later
+            
             let fiveDayCard = $("<div>").addClass("card forecastColor");
             let FiveDayTime = new Date(response.list[i].dt * 1000);
-            // Setting string to five day time 
+           
             FiveDayTime = FiveDayTime.toLocaleDateString("en-US");
-            fiveDayCard.html("<p>" + FiveDayTime + "</p>" + `<img src='https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png'>` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>")
+            fiveDayCard.html("<p>" + FiveDayTime + "</p>" + `<img src='https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png'>` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "<p>" + "Wind: " + response.list[i].wind.speed + " MPH" + "</p>")
 
             forecastDiv.append(fiveDayCard);
         }
@@ -76,32 +75,24 @@ var formSubmitHandler = function(event) {
     if (cityName) {
         getWeather(cityName);
         getForecast(cityName);
-        createButton(cityName);
+        buttonCreate(cityName);
         nameInputEl.value = "";
     } else {
         alert("Please enter a city name");
     }
 };
 
-// Trying to figure out how to make a button with previously searched city names.
-var createButton = function(cityName) {
-    // create a new div element
-    const newButton = document.createElement("button");
-    newButton.setAttribute('id','previous');
+var buttonCreate = function(cityName) {
+    if (cityName) {
+        $('#cities').append(
+            $(document.createElement('button')).prop({
+                type: 'button',
+                innerHTML: cityName,
+                class: 'btn-secondary btn btn-block',
+                id: 'testing'
+            })
+        );
+    }
+}
 
-    // and give it some content
-    const buttonContent = document.createTextNode(cityName);
-
-    // add the text node to the newly created div
-    newButton.appendChild(buttonContent);
-
-    // add the newly created element and its content into the DOM
-    document.getElementById("cities").appendChild(newButton);
-
-    var element = document.getElementById("previous");
-    element.classList.add("btn-block"); 
-
-};
-
-// How could I use jquery to accomplish this same result? 
 cityFormEl.addEventListener("submit", formSubmitHandler);
