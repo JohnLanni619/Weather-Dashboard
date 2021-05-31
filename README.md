@@ -1,7 +1,7 @@
 # Weather-Dashboard
 
 ## Description
-The goal of this project was to create an application that lets you see current and future weather in any city in order to help with planning trips.
+The goal of this project was to create an application that lets you see current and future weather in any city in order to help with planning trips
 
 ## Key Points
 1. When searching for a city, current and future conditions for that city are displayed.
