@@ -2,7 +2,7 @@ var cityFormEl = document.querySelector("#city-form");
 var nameInputEl = document.querySelector("#cityname");
 var date = moment().format('MMMM Do, YYYY');
 var time = moment().format('hh:mm:ss');
-
+// var createButton = $("#cities"); 
 
 var getWeather = function(city) {
     // format the url
@@ -13,7 +13,7 @@ var getWeather = function(city) {
         url: currentUrl,
         method: "GET"
     }).then(function (response) {
-        
+
         let cityDiv = $("#city");
         let tempDiv = $("#temp");
         let windDiv = $("#wind");
@@ -73,15 +73,35 @@ var formSubmitHandler = function(event) {
     //get value from input element
     var cityName = nameInputEl.value.trim();
 
-    if (cityname) {
+    if (cityName) {
         getWeather(cityName);
         getForecast(cityName);
+        createButton(cityName);
         nameInputEl.value = "";
     } else {
         alert("Please enter a city name");
     }
 };
 
-// How could I use jquery to accomplish this same result? 
-cityFormEl.addEventListener("submit", formSubmitHandler); 
+// Trying to figure out how to make a button with previously searched city names.
+var createButton = function(cityName) {
+    // create a new div element
+    const newButton = document.createElement("button");
+    newButton.setAttribute('id','previous');
 
+    // and give it some content
+    const buttonContent = document.createTextNode(cityName);
+
+    // add the text node to the newly created div
+    newButton.appendChild(buttonContent);
+
+    // add the newly created element and its content into the DOM
+    document.getElementById("cities").appendChild(newButton);
+
+    var element = document.getElementById("previous");
+    element.classList.add("btn-primary");
+  
+};
+
+// How could I use jquery to accomplish this same result? 
+cityFormEl.addEventListener("submit", formSubmitHandler);
