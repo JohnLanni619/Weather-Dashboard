@@ -99,8 +99,8 @@ var createButton = function(cityName) {
     document.getElementById("cities").appendChild(newButton);
 
     var element = document.getElementById("previous");
-    element.classList.add("btn-primary");
-  
+    element.classList.add("btn-block"); 
+
 };
 
 // How could I use jquery to accomplish this same result? 
