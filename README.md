@@ -14,6 +14,6 @@ The goal of this project was to create an application that lets you see current 
 [Link to Repository](https://github.com/JohnLanni619/Weather-Dashboard)
 
 ## Screenshot
-
+![screencapture-file-C-Users-johnl-Desktop-Weather-Dashboard-index-html-2021-05-30-23_21_31](https://user-images.githubusercontent.com/82123623/120135235-d4d9c580-c19d-11eb-87e5-9fd394929020.png)
 ## About Me
 I'm an aspiring full-stack web developer, currently working through the Rutgers Coding Bootcamp. When I'm not studying coding, I'm working as a personal trainer and spending time with my 3 year old son.
